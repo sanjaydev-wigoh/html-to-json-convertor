@@ -1,0 +1,91 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optimized Layout</title>
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    min-width: 980px;
+    margin-bottom: 30px;
+  }
+  .video-section {
+    position: relative;
+    height: 881px;
+  }
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(6, 21, 81); /* Assuming this is the video overlay color */
+  }
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .content {
+    display: grid;
+    grid-template-rows: 158px 133px 15px 33px 40px 46px 41px 278px 57px 80px;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+  }
+  .rich-text {
+    color: #fff; /* Assuming white text color */
+  }
+  .button {
+    padding: 10px 20px;
+    background-color: blue; /* Example button color */
+    color: white;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<section class="container">
+  <div class="video-section">
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="path_to_video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="content">
+      <div class="rich-text" style="grid-row: 2;">{{template-4}}</div>
+      <div class="rich-text" style="grid-row: 4;">{{template-10}}</div>
+      <a href="#" class="button" style="grid-row: 6;">Click Me</a>
+    </div>
+  </div>
+</section>
+</body>
+</html> -->
+
+<section class="hero-section" style="display: flex; flex-direction: column;">
+  <div class="video-container" style="position: relative; width: 100%; height: 881px;">
+    <span>{{template-1}}</span>
+    <span>{{template-2}}</span>
+  </div>
+  <div class="content-area" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 20px;">
+    <div style="grid-column: 1 / span 2;">
+      <span>{{template-3}}</span>
+      <span>{{template-4}}</span>
+    </div>
+    <div style="grid-column: 3;">
+      <span>{{template-9}}</span>
+      <span>{{template-10}}</span>
+      <span>{{template-12}}</span>
+      <span>{{template-14}}</span>
+      <span>{{template-15}}</span>
+      <span>{{template-16}}</span>
+      <span>{{template-17}}</span>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,1079 @@
+"children": [
+    {
+        "tag": "SECTION",
+        "id": "comp-irqduxer",
+        "className": "comp-irqduxer CohWsy wixui-column-strip",
+        "styles": {
+            "display": "flex",
+            "grid-column-end": "2",
+            "grid-column-start": "1",
+            "grid-row-end": "2",
+            "grid-row-start": "1",
+            "height": "881px",
+            "justify-self": "start",
+            "left": "0px",
+            "margin-block-end": "30px",
+            "margin-bottom": "30px",
+            "min-block-size": "auto",
+            "min-height": "auto",
+            "min-inline-size": "980px",
+            "min-width": "980px",
+            "perspective-origin": "967.5px 440.5px",
+            "position": "relative",
+            "right": "0px",
+            "top": "0px",
+            "transform-origin": "967.5px 440.5px"
+        },
+        "children": [
+            {
+                "tag": "DIV",
+                "id": "bgLayers_comp-irqduxer",
+                "className": "if7Vw2",
+                "styles": {
+                    "block-size": "881px",
+                    "bottom": "0px",
+                    "height": "881px",
+                    "perspective-origin": "967.5px 440.5px",
+                    "position": "absolute",
+                    "right": "0px",
+                    "top": "0px",
+                    "transform-origin": "967.5px 440.5px"
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "id": "",
+                        "className": "tcElKx i1tH8h",
+                        "styles": {
+                            "bottom": "0px",
+                            "height": "881px",
+                        },
+                        "children": []
+                    },
+                    {
+                        "tag": "DIV",
+                        "id": "bgMedia_comp-irqduxer",
+                        "className": "wG8dni",
+                        "styles": {
+                            "block-size": "881px",
+                            "height": "881px",
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "id": "",
+                "className": "V5AUxf",
+                "styles": {
+                    "block-size": "881px",
+                    "bottom": "0px",
+                    "column-gap": "0px",
+                    "display": "flex",
+                    "height": "881px",
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "id": "comp-irqduxf8",
+                        "className": "comp-irqduxf8 YzqVVZ wixui-column-strip__column",
+                        "styles": {
+                            "block-size": "881px",
+                            "bottom": "0px",
+                            "flex-basis": "0%",
+                            "flex-grow": "980",
+                            "height": "881px",
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "id": "bgLayers_comp-irqduxf8",
+                                "className": "MW5IWV",
+                                "styles": {
+                                    "block-size": "881px",
+                                    "bottom": "0px",
+                                    "height": "881px",
+                                },
+                                "children": [
+                                    {
+                                        "tag": "DIV",
+                                        "id": "",
+                                        "className": "LWbAav Kv1aVt",
+                                        "styles": {
+                                            "background-color": "rgb(6, 21, 81)",
+                                            "block-size": "881px",
+                                            "bottom": "0px",
+                                            "height": "881px",
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "DIV",
+                                        "id": "bgMedia_comp-irqduxf8",
+                                        "className": "VgO9Yg",
+                                        "styles": {
+                                            "block-size": "3079px",
+                                            "height": "3079px",
+                                        },
+                                        "children": [
+                                            {
+                                                "tag": "WIX-VIDEO",
+                                                "id": "videoContainer_comp-irqduxf8",
+                                                "className": "bX9O_S bgVideo yK6aSC",
+                                                "styles": {
+                                                    "block-size": "1099px",
+                                                    "display": "block",
+                                                    "height": "1099px",
+                                                    "inline-size": "1935px",
+                                                    "width": "1935px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "VIDEO",
+                                                        "id": "comp-irqduxf8_video",
+                                                        "className": "K8MSra",
+                                                        "styles": {
+                                                            "block-size": "1099px",
+                                                            "bottom": "0px",
+                                                            "display": "block",
+                                                            "height": "1099px",
+                                                            "width": "1935px"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "tag": "WOW-IMAGE",
+                                                        "id": "comp-irqduxf8_img",
+                                                        "className": "jhxvbR Z_wCwr Jxk_UL bgVideoposter yK6aSC",
+                                                        "styles": {
+                                                            "block-size": "1099px",
+                                                            "display": "block",
+                                                            "height": "1099px",
+                                                            "width": "1935px"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "tag": "IMG",
+                                                                "id": "",
+                                                                "className": "",
+                                                                "styles": {
+                                                                    "block-size": "1099px",
+                                                                    "height": "1099px",
+                                                                    "width": "1935px"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "DIV",
+                                "id": "",
+                                "className": "",
+                                "styles": {
+                                    "block-size": "881px",
+                                    "bottom": "0px",
+                                    "height": "881px",
+                                },
+                                "children": [
+                                    {
+                                        "tag": "DIV",
+                                        "id": "",
+                                        "className": "",
+                                        "styles": {
+                                            "block-size": "881px",
+                                            "display": "grid",
+                                            "grid-template-columns": "1935px",
+                                            "grid-template-rows": "158px 133px 15px 33px 40px 46px 41px 278px 57px 80px",
+                                            "height": "881px",
+                                            "perspective-origin": "967.5px 440.5px",
+                                            "pointer-events": "none",
+                                            "transform-origin": "967.5px 440.5px"
+                                        },
+                                        "children": [
+                                            {
+                                                "tag": "DIV",
+                                                "id": "comp-isehzfde2",
+                                                "className": "comp-isehzfde2 wixui-vector-image",
+                                                "styles": {
+                                                    "align-self": "start",
+                                                    "block-size": "57px",
+                                                    "bottom": "0px",
+                                                    "grid-column-end": "2",
+                                                    "grid-column-start": "1",
+                                                    "grid-row-end": "2",
+                                                    "grid-row-start": "1",
+                                                    "height": "57px",
+                                                    "justify-self": "start",
+                                                    "left": "920px",
+                                                    "margin-block-start": "101px",
+                                                    "margin-inline-start": "477.5px",
+                                                    "margin-left": "477.5px",
+                                                    "margin-top": "101px",
+                                                    "min-block-size": "auto",
+                                                    "min-height": "auto",
+                                                    "min-inline-size": "auto",
+                                                    "min-width": "auto",
+                                                    "perspective-origin": "30px 28.5px",
+                                                    "position": "relative",
+                                                    "right": "-920px",
+                                                    "top": "0px",
+                                                    "transform-origin": "30px 28.5px",
+                                                    "width": "60px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "DIV",
+                                                        "id": "",
+                                                        "className": "AKxYR5 VZYmYf comp-isehzfde2",
+                                                        "styles": {
+                                                            "block-size": "57px",
+                                                            "bottom": "0px",
+                                                            "height": "57px",
+                                                            "left": "0px",
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "tag": "svg",
+                                                                "id": "",
+                                                                "className": {},
+                                                                "styles": {
+                                                                    "block-size": "57px",
+                                                                    "bottom": "0px",
+                                                                    "display": "block",
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "g",
+                                                                        "id": "",
+                                                                        "className": {},
+                                                                        "html": "<g></g>",
+                                                                        "styles": {},
+                                                                        "children": [
+                                                                            {
+                                                                                "tag": "path",
+                                                                                "id": "",
+                                                                                "className": {},
+                                                                                "styles": {},
+                                                                                "children": []
+                                                                            },
+                                                                            {
+                                                                                "tag": "path",
+                                                                                "id": "",
+                                                                                "className": {},
+                                                                                "styles": {},
+                                                                                "children": []
+                                                                            },
+                                                                            {
+                                                                                "tag": "path",
+                                                                                "id": "",
+                                                                                "className": {},
+                                                                                "styles": {},
+                                                                                "children": []
+                                                                            },
+                                                                            {
+                                                                                "tag": "path",
+                                                                                "id": "",
+                                                                                "className": {},
+                                                                                "styles": {},
+                                                                                "children": []
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "DIV",
+                                                "id": "comp-irqduxfv",
+                                                "className": "HcOXKn c9GqVL QxJLC3 lq2cno YQcXTT comp-irqduxfv wixui-rich-text",
+                                                "styles": {
+                                                    "align-self": "start",
+                                                    "block-size": "132px",
+                                                    "bottom": "0px",
+                                                    "grid-column-end": "2",
+                                                    "grid-column-start": "1",
+                                                    "grid-row-end": "3",
+                                                    "grid-row-start": "2",
+                                                    "height": "132px",
+                                                    "inline-size": "980px",
+                                                    "justify-self": "start",
+                                                    "left": "0px",
+                                                    "width": "980px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "H1",
+                                                        "id": "",
+                                                        "className": "font_3 wixui-rich-text__text",
+                                                        "styles": {},
+                                                        "children": [
+                                                            {
+                                                                "tag": "SPAN",
+                                                                "id": "",
+                                                                "className": "wixui-rich-text__text",
+                                                                "styles": {},
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "SPAN",
+                                                                        "id": "",
+                                                                        "className": "color_11 wixui-rich-text__text",
+                                                                        "html": "<span class=\"color_11 wixui-rich-text__text\"></span>",
+                                                                        "styles": {},
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "tag": "SPAN",
+                                                                "id": "",
+                                                                "className": "wixui-rich-text__text",
+                                                                "styles": {},
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "SPAN",
+                                                                        "id": "",
+                                                                        "className": "color_11 wixui-rich-text__text",
+                                                                        "html": "<span class=\"color_11 wixui-rich-text__text\"></span>",
+                                                                        "styles": {},
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "DIV",
+                                                "id": "comp-isehzfdf",
+                                                "className": "comp-isehzfdf wixui-vector-image",
+                                                "styles": {
+                                                    "align-self": "start",
+                                                    "block-size": "44px",
+                                                    "bottom": "0px",
+                                                    "grid-column-end": "2",
+                                                    "grid-column-start": "1",
+                                                    "grid-row-end": "5",
+                                                    "grid-row-start": "4",
+                                                    "height": "44px",
+                                                    "width": "31px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "DIV",
+                                                        "id": "",
+                                                        "className": "AKxYR5 VZYmYf comp-isehzfdf",
+                                                        "styles": {
+                                                            "block-size": "44px",
+                                                            "height": "44px",
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "tag": "svg",
+                                                                "id": "",
+                                                                "className": {},
+                                                                "styles": {},
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "g",
+                                                                        "id": "",
+                                                                        "className": {},
+                                                                        "html": "<g></g>",
+                                                                        "styles": {},
+                                                                        "children": [
+                                                                            {
+                                                                                "tag": "path",
+                                                                                "id": "",
+                                                                                "className": {},
+                                                                                "styles": {},
+                                                                                "children": []
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "DIV",
+                                                "id": "comp-irqduxg0",
+                                                "className": "HcOXKn SxM0TO QxJLC3 lq2cno YQcXTT comp-irqduxg0 wixui-rich-text",
+                                                "styles": {
+                                                    "align-self": "start",
+                                                    "block-size": "21px",
+                                                    "bottom": "0px",
+                                                    "grid-column-end": "2",
+                                                    "grid-column-start": "1",
+                                                    "grid-row-end": "4",
+                                                    "grid-row-start": "3",
+                                                    "height": "21px",
+                                                    "width": "637px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "H6",
+                                                        "id": "",
+                                                        "className": "font_6 wixui-rich-text__text",
+                                                        "styles": {},
+                                                        "children": [
+                                                            {
+                                                                "tag": "SPAN",
+                                                                "id": "",
+                                                                "className": "color_11 wixui-rich-text__text",
+                                                                "html": "<span class=\"color_11 wixui-rich-text__text\"></span>",
+                                                                "styles": {},
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "DIV",
+                                                "id": "comp-irqduxg4",
+                                                "className": "comp-irqduxg4 FubTgk",
+                                                "styles": {
+                                                    "align-self": "start",
+                                                    "grid-column-end": "2",
+                                                    "grid-column-start": "1",
+                                                    "grid-row-end": "6",
+                                                    "grid-row-start": "5",
+                                                    "height": "49px",
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "A",
+                                                        "id": "",
+                                                        "className": "uDW_Qe wixui-button PlZyDq",
+                                                        "styles": {},
+                                                        "children": [
+                                                            {
+                                                                "tag": "SPAN",
+                                                                "id": "",
+                                                                "className": "l7_2fn wixui-button__label",
+                                                                "html": "<span class=\"l7_2fn wixui-button__label\"></span>",
+                                                                "styles": {},
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "DIV",
+                                                "id": "comp-isei16an",
+                                                "className": "comp-isei16an wixui-vector-image",
+                                                "styles": {
+                                                    "align-self": "start",
+                                                    "block-size": "31px",
+                                                    "bottom": "0px",
+                                                    "grid-column-end": "2",
+                                                    "grid-column-start": "1",
+                                                    "grid-row-end": "7",
+                                                    "grid-row-start": "6",
+                                                    "height": "31px",
+                                                    "justify-self": "start",
+                                                    "left": "878px",
+                                                    "width": "36px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "DIV",
+                                                        "id": "",
+                                                        "className": "AKxYR5 VZYmYf comp-isei16an",
+                                                        "styles": {
+                                                            "block-size": "31px",
+                                                            "bottom": "0px",
+                                                            "height": "31px",
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "tag": "svg",
+                                                                "id": "",
+                                                                "className": {},
+                                                                "styles": {},
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "g",
+                                                                        "id": "",
+                                                                        "className": {},
+                                                                        "html": "<g></g>",
+                                                                        "styles": {},
+                                                                        "children": [
+                                                                            {
+                                                                                "tag": "path",
+                                                                                "id": "",
+                                                                                "className": {},
+                                                                                "styles": {},
+                                                                                "children": []
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "DIV",
+                                                "id": "comp-m9ur8iin",
+                                                "className": "comp-m9ur8iin wixui-vector-image",
+                                                "styles": {
+                                                    "align-self": "start",
+                                                    "block-size": "31px",
+                                                    "bottom": "0px",
+                                                    "grid-column-end": "2",
+                                                    "grid-column-start": "1",
+                                                    "grid-row-end": "8",
+                                                    "grid-row-start": "7",
+                                                    "height": "31px",
+                                                    "width": "36px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "DIV",
+                                                        "id": "",
+                                                        "className": "AKxYR5 VZYmYf comp-m9ur8iin",
+                                                        "styles": {
+                                                            "block-size": "31px",
+                                                            "height": "31px",
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "tag": "svg",
+                                                                "id": "",
+                                                                "className": {},
+                                                                "styles": {},
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "g",
+                                                                        "id": "",
+                                                                        "className": {},
+                                                                        "html": "<g></g>",
+                                                                        "styles": {},
+                                                                        "children": [
+                                                                            {
+                                                                                "tag": "path",
+                                                                                "id": "",
+                                                                                "className": {},
+                                                                                "styles": {},
+                                                                                "children": []
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "DIV",
+                                                "id": "comp-isehzfdf1",
+                                                "className": "comp-isehzfdf1 wixui-vector-image",
+                                                "styles": {
+                                                    "align-self": "start",
+                                                    "block-size": "55px",
+                                                    "bottom": "0px",
+                                                    "grid-column-end": "2",
+                                                    "grid-column-start": "1",
+                                                    "grid-row-end": "10",
+                                                    "grid-row-start": "9",
+                                                    "height": "55px",
+                                                    "justify-self": "start",
+                                                    "width": "46px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "DIV",
+                                                        "id": "",
+                                                        "className": "AKxYR5 VZYmYf comp-isehzfdf1",
+                                                        "styles": {
+                                                            "block-size": "55px",
+                                                            "bottom": "0px",
+                                                            "fill": "rgb(133, 77, 255)",
+                                                            "height": "55px",
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "tag": "svg",
+                                                                "id": "",
+                                                                "className": {},
+                                                                "styles": {},
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "g",
+                                                                        "id": "",
+                                                                        "className": {},
+                                                                        "html": "<g></g>",
+                                                                        "styles": {},
+                                                                        "children": [
+                                                                            {
+                                                                                "tag": "path",
+                                                                                "id": "",
+                                                                                "className": {},
+                                                                                "styles": {},
+                                                                                "children": []
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "DIV",
+                                                "id": "comp-isejgyj5",
+                                                "className": "comp-isejgyj5 wixui-vector-image",
+                                                "styles": {
+                                                    "align-self": "start",
+                                                    "block-size": "22px",
+                                                    "bottom": "0px",
+                                                    "grid-column-end": "2",
+                                                    "grid-column-start": "1",
+                                                    "grid-row-end": "11",
+                                                    "grid-row-start": "10",
+                                                    "height": "22px",
+                                                    "justify-self": "start",
+                                                    "width": "24px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "DIV",
+                                                        "id": "",
+                                                        "className": "AKxYR5 VZYmYf comp-isejgyj5",
+                                                        "styles": {
+                                                            "block-size": "22px",
+                                                            "bottom": "0px",
+                                                            "fill": "rgb(133, 77, 255)",
+                                                            "height": "22px",
+                                                            "left": "0px",
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "tag": "svg",
+                                                                "id": "",
+                                                                "className": {},
+                                                                "styles": {},
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "g",
+                                                                        "id": "",
+                                                                        "className": {},
+                                                                        "html": "<g></g>",
+                                                                        "styles": {},
+                                                                        "children": [
+                                                                            {
+                                                                                "tag": "path",
+                                                                                "id": "",
+                                                                                "className": {},
+                                                                                "styles": {},
+                                                                                "children": []
+                                                                            },
+                                                                            {
+                                                                                "tag": "path",
+                                                                                "id": "",
+                                                                                "className": {},
+                                                                                "styles": {},
+                                                                                "children": []
+                                                                            },
+                                                                            {
+                                                                                "tag": "path",
+                                                                                "id": "",
+                                                                                "className": {},
+                                                                                "children": []
+                                                                            },
+                                                                            {
+                                                                                "tag": "path",
+                                                                                "id": "",
+                                                                                "className": {},
+                                                                                "styles": {},
+                                                                                "children": []
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "tag": "DIV",
+                                                "id": "",
+                                                "className": "",
+                                                "styles": {
+                                                    "block-size": "744px",
+                                                    "grid-column-end": "2",
+                                                    "grid-column-start": "1",
+                                                    "grid-row-end": "9",
+                                                    "grid-row-start": "1",
+                                                    "height": "744px",
+                                                    "width": "0px"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "tag": "SECTION",
+        "id": "comp-irqdux7i",
+        "className": "comp-irqdux7i CohWsy wixui-column-strip",
+        "styles": {
+            "align-self": "start",
+            "block-size": "218px",
+            "bottom": "0px",
+            "display": "flex",
+            "grid-column-end": "2",
+            "grid-column-start": "1",
+            "grid-row-end": "3",
+            "grid-row-start": "2",
+            "height": "218px",
+            "justify-self": "start",
+        },
+        "children": [
+            {
+                "tag": "DIV",
+                "id": "bgLayers_comp-irqdux7i",
+                "className": "if7Vw2",
+                "styles": {},
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "id": "",
+                        "className": "tcElKx i1tH8h",
+                        "styles": {},
+                        "children": []
+                    },
+                    {
+                        "tag": "DIV",
+                        "id": "bgMedia_comp-irqdux7i",
+                        "className": "wG8dni",
+                        "styles": {},
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "tag": "DIV",
+                "id": "",
+                "className": "V5AUxf",
+                "styles": {
+                    "block-size": "218px",
+                    "bottom": "0px",
+                    "column-gap": "0px",
+                    "display": "flex",
+                    "height": "218px",
+                },
+                "children": [
+                    {
+                        "tag": "DIV",
+                        "id": "comp-irqdux85",
+                        "className": "comp-irqdux85 YzqVVZ wixui-column-strip__column",
+                        "styles": {
+                            "block-size": "218px",
+                            "bottom": "0px",
+                            "flex-basis": "0%",
+                            "flex-grow": "980",
+                            "height": "218px",
+                        },
+                        "children": [
+                            {
+                                "tag": "DIV",
+                                "id": "bgLayers_comp-irqdux85",
+                                "className": "MW5IWV",
+                                "styles": {},
+                                "children": [
+                                    {
+                                        "tag": "DIV",
+                                        "id": "",
+                                        "className": "LWbAav Kv1aVt",
+                                        "styles": {},
+                                        "children": []
+                                    },
+                                    {
+                                        "tag": "DIV",
+                                        "id": "bgMedia_comp-irqdux85",
+                                        "className": "VgO9Yg",
+                                        "styles": {},
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "tag": "DIV",
+                                "id": "",
+                                "className": "",
+                                "styles": {
+                                    "block-size": "218px",
+                                    "bottom": "0px",
+                                    "display": "flex",
+                                    "height": "218px",
+                                },
+                                "children": [
+                                    {
+                                        "tag": "DIV",
+                                        "id": "",
+                                        "className": "",
+                                        "styles": {
+                                            "block-size": "645px",
+                                            "display": "grid",
+                                            "grid-template-columns": "1935px",
+                                            "grid-template-rows": "645px",
+                                            "height": "645px",
+                                        },
+                                        "children": [
+                                            {
+                                                "tag": "DIV",
+                                                "id": "comp-irqduxgc",
+                                                "className": "comp-irqduxgc mDzRgi QodGTM ignore-focus wixui-slideshow",
+                                                "styles": {
+                                                    "align-self": "start",
+                                                    "block-size": "559px",
+                                                    "bottom": "0px",
+                                                    "box-sizing": "border-box",
+                                                    "display": "grid",
+                                                    "grid-column-end": "2",
+                                                    "grid-column-start": "1",
+                                                    "grid-row-end": "2",
+                                                    "grid-row-start": "1",
+                                                    "height": "559px",
+                                                    "justify-self": "start",
+                                                    "width": "905px"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "tag": "BUTTON",
+                                                        "id": "",
+                                                        "className": "XvQ3FE CdshHv",
+                                                        "styles": {
+                                                            "align-self": "center",
+                                                            "block-size": "36.6875px",
+                                                            "bottom": "261.156px",
+                                                            "cursor": "pointer",
+                                                            "display": "block",
+                                                            "grid-column-end": "1",
+                                                            "grid-column-start": "1",
+                                                            "grid-row-end": "1",
+                                                            "grid-row-start": "1",
+                                                            "height": "36.6875px",
+                                                            "justify-self": "start",
+                                                            "width": "17px",
+                                                            "z-index": "1"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "tag": "svg",
+                                                                "id": "",
+                                                                "className": {},
+                                                                "styles": {},
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "path",
+                                                                        "id": "",
+                                                                        "className": {},
+                                                                        "html": "<path d=\"M20.3 40.8 0 20.5 20.3.2l.7.7L1.3 20.5 21 40.1z\"></path>",
+                                                                        "styles": {},
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "tag": "BUTTON",
+                                                        "id": "",
+                                                        "className": "XvQ3FE Qinjwp",
+                                                        "styles": {
+                                                            "align-self": "center",
+                                                            "block-size": "36.6875px",
+                                                            "bottom": "261.156px",
+                                                            "cursor": "pointer",
+                                                            "display": "block",
+                                                            "grid-column-end": "1",
+                                                            "grid-column-start": "1",
+                                                            "grid-row-end": "1",
+                                                            "grid-row-start": "1",
+                                                            "height": "36.6875px",
+                                                            "justify-self": "end",
+                                                            "width": "17px",
+                                                            "z-index": "1"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "tag": "svg",
+                                                                "id": "",
+                                                                "className": {},
+                                                                "styles": {},
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "path",
+                                                                        "id": "",
+                                                                        "className": {},
+                                                                        "html": "<path d=\"M20.3 40.8 0 20.5 20.3.2l.7.7L1.3 20.5 21 40.1z\"></path>",
+                                                                        "styles": {},
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "tag": "DIV",
+                                                        "id": "",
+                                                        "className": "N2NGoO",
+                                                        "styles": {
+                                                            "height": "559px",
+                                                            "width": "905px"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "tag": "DIV",
+                                                        "id": "",
+                                                        "className": "hDJzl4",
+                                                        "styles": {
+                                                            "block-size": "559px",
+                                                            "bottom": "0px",
+                                                            "grid-column-end": "1",
+                                                            "grid-column-start": "1",
+                                                            "grid-row-end": "1",
+                                                            "grid-row-start": "1",
+                                                            "height": "559px",
+                                                            "width": "905px"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "tag": "DIV",
+                                                                "id": "comp-irt9hbxb",
+                                                                "className": "comp-irt9hbxb imK94d",
+                                                                "styles": {
+                                                                    "block-size": "559px",
+                                                                    "bottom": "0px",
+                                                                    "height": "559px",
+                                                                    "width": "905px"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "tag": "DIV",
+                                                                        "id": "bgLayers_comp-irt9hbxb",
+                                                                        "className": "MW5IWV eF_jBL",
+                                                                        "styles": {
+                                                                            "block-size": "559px",
+                                                                            "bottom": "0px",
+                                                                            "height": "559px",
+                                                                            "width": "905px"
+                                                                        },
+                                                                        "children": [
+                                                                            {
+                                                                                "tag": "DIV",
+                                                                                "id": "",
+                                                                                "className": "LWbAav Kv1aVt",
+                                                                                "styles": {
+                                                                                    "block-size": "559px",
+                                                                                    "bottom": "0px",
+                                                                                    "height": "559px",
+                                                                                    "width": "905px"
+                                                                                },
+                                                                                "children": []
+                                                                            },
+                                                                            {
+                                                                                "tag": "DIV",
+                                                                                "id": "bgMedia_comp-irt9hbxb",
+                                                                                "className": "VgO9Yg",
+                                                                                ,
+                                                                                "styles": {},
+                                                                                "children": [
+                                                                                    {
+                                                                                        "tag": "WOW-IMAGE",
+                                                                                        "id": "img_comp-irt9hbxb",
+                                                                                        "className": "jhxvbR Kv1aVt dLPlxY mNGsUM bgImage",
+                                                                                        "styles": {
+                                                                                            "width": "905px"
+                                                                                        },
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "tag": "IMG",
+                                                                                                "id": "",
+                                                                                                "className": "",
+                                                                                                "html": "<img src=\"https://static.wixstatic.com/media/d0220c_fc555432fc9542e994e1645024f3ebe1~mv2.png/v1/fill/w_930,h_574,al_c,q_90,enc_avif,quality_auto/d0220c_fc555432fc9542e994e1645024f3ebe1~mv2.png\" alt=\"\" style=\"width: 905px; height: 559px; object-fit: cover; object-position: 50% 50%;\" width=\"905\" height=\"559\" data-ssr-src-done=\"true\" fetchpriority=\"high\"></img>",
+                                                                                                "styles": {},
+                                                                                                "children": []
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "tag": "DIV",
+                                                                        "id": "",
+                                                                        "className": "wfm0FO",
+                                                                        "html": "<div class=\"wfm0FO\"></div>",
+                                                                        "styles": {
+                                                                            "width": "905px"
+                                                                        },
+                                                                        "children": []
+                                                                    },
+                                                                    {
+                                                                        "tag": "DIV",
+                                                                        "id": "",
+                                                                        "className": "",
+                                                                        "styles": {
+                                                                            "block-size": "559px",
+                                                                            "height": "559px",
+                                                                            "width": "905px"
+                                                                        },
+                                                                        "children": [
+                                                                            {
+                                                                                "tag": "DIV",
+                                                                                "id": "",
+                                                                                "className": "",
+                                                                                "styles": {
+                                                                                    "width": "905px"
+                                                                                },
+                                                                                "children": []
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+            }
+        ]
+    }
+]
