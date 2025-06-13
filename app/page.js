@@ -180,6 +180,9 @@
 'use client';
 import { useState } from 'react';
 import Head from 'next/head';
+import Home from './components/indexbob';
+import SiteRebuilder from './components/rebuild/site';
+import LayoutFilterApp from './components/filter-layout/page';
 
 export default function HtmlOptimizer() {
   const [rawHtml, setRawHtml] = useState('');
@@ -262,6 +265,8 @@ export default function HtmlOptimizer() {
         <title>HTML to JSON Layout Converter</title>
         <meta name="description" content="Convert raw HTML to bare minimum code and JSON layout structure with template placeholders" />
       </Head>
+    
+      <Home/>
 
       <div className="min-h-screen bg-gray-50 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -436,6 +441,7 @@ export default function HtmlOptimizer() {
           )}
         </div>
       </div>
+      <SiteRebuilder/>
     </>
   );
 }
