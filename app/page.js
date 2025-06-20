@@ -183,6 +183,7 @@ import Head from 'next/head';
 import Home from './components/indexbob';
 import SiteRebuilder from './components/rebuild/site';
 import LayoutFilterApp from './components/filter-layout/page';
+import BareHtml from './components/bare-html/page';
 
 export default function HtmlOptimizer() {
   const [rawHtml, setRawHtml] = useState('');
@@ -441,6 +442,7 @@ export default function HtmlOptimizer() {
           )}
         </div>
       </div>
+      <BareHtml/>
       <SiteRebuilder/>
     </>
   );

@@ -1005,11 +1005,11 @@ export default function WixConverterPage() {
 
       <div className="grid md:grid-cols-2 gap-6 p-6">
         <div>
-          <h2 className="text-xl font-semibold mb-4">📝 Input Configuration</h2>
+          <h2 className="text-xl font-semibold mb-4 text-black" >📝 Input Configuration</h2>
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">Section Name</label>
             <input
-              className="w-full p-2 border-2 border-gray-300 rounded"
+              className="w-full p-2 border-2 text-black border-gray-300 rounded"
               value={sectionName}
               onChange={(e) => setSectionName(e.target.value)}
               placeholder="e.g., hero-section, navbar, footer"
@@ -1018,7 +1018,7 @@ export default function WixConverterPage() {
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">Wix HTML Code</label>
             <textarea
-              className="w-full p-2 border-2 border-gray-300 rounded h-[200px] font-mono"
+              className="w-full p-2 border-2 text-black border-gray-300 rounded h-[200px] font-mono"
               value={htmlInput}
               onChange={(e) => setHtmlInput(e.target.value)}
             />
@@ -1026,12 +1026,12 @@ export default function WixConverterPage() {
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">Computed Styles JSON (Optional)</label>
             <textarea
-              className="w-full p-2 border-2 border-blue-200 rounded h-[120px] font-mono bg-blue-50"
+              className="w-full p-2 border-2 border-blue-200 rounded h-[120px] text-black font-mono bg-blue-50"
               value={computedStylesInput}
               onChange={(e) => setComputedStylesInput(e.target.value)}
             />
           </div>
-          <button onClick={processHtml} disabled={loading} className="btn w-full">
+          <button onClick={processHtml} disabled={loading} className="btn p-3 border border-gray-300 rounded text-black">
             🚀 Convert to Template
           </button>
           {loading && <p className="text-center mt-4">Processing...</p>}
@@ -1043,7 +1043,7 @@ export default function WixConverterPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold mb-4">📤 Template Output</h2>
+          <h2 className="text-xl font-semibold mb-4 text-black">📤 Template Output</h2>
           {result && (
             <>
               <div className="grid grid-cols-3 gap-4 text-center mb-4">
@@ -1060,7 +1060,7 @@ export default function WixConverterPage() {
                   <div className="text-sm text-gray-600">Styles Mapped</div>
                 </div>
               </div>
-              <pre className="bg-gray-100 p-3 rounded text-sm overflow-auto whitespace-pre-wrap">
+              <pre className="bg-gray-100 p-3 rounded text-sm text-black overflow-auto whitespace-pre-wrap">
                 {result.processedHtml.replace(/></g, ">\n<")}
               </pre>
               <div className="mt-4 max-h-[300px] overflow-y-auto border rounded">

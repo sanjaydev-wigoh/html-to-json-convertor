@@ -525,11 +525,11 @@ export default function RebuildPage() {
   };
 
   return (
-    <div className="mx-auto max-w-4xl p-6">
-      <h1 className="text-2xl font-bold mb-4">Rebuild Site</h1>
+    <div className="mx-auto ">
+      <h1 className="text-2xl font-bold mb-4 text-black">Rebuild Site</h1>
 
       <textarea
-        className="w-full h-40 p-3 border border-gray-300 rounded mb-4"
+        className="w-full h-40 p-3 border border-gray-300 rounded mb-4 text-black"
         placeholder="Paste raw HTML like <div>{{template-1}}</div>"
         value={rawHtml}
         onChange={(e) => setRawHtml(e.target.value)}
@@ -549,7 +549,7 @@ export default function RebuildPage() {
       )}
 
       <div className="mt-8">
-        <h2 className="text-xl font-semibold mb-2">Rendered Output</h2>
+        <h2 className="text-xl font-semibold mb-2 text-black">Rendered Output</h2>
         <div
           className="border p-4 rounded bg-white"
           dangerouslySetInnerHTML={{ __html: rebuiltHtml }}

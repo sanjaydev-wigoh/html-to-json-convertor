@@ -401,6 +401,444 @@
 //         });
 //     }
 // }
+// "use server";
+
+// import fs from 'fs/promises';
+// import path from 'path';
+// import { JSDOM } from 'jsdom';
+// import { OpenAI } from 'openai';
+
+// const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+// let templateCounter = 1;
+
+// const WIDGET_TAGS = [
+//   'h1','h2','h3','h4','h5','h6','p','span','button','a','img','svg','video','audio',
+//   'input','textarea','select','label','strong','b','em','i','ul','ol','li','table',
+//   'tr','td','th','form','iframe'
+// ];
+
+// function extractAttributes(el) {
+//   const attrs = {};
+//   for (let attr of el.attributes) {
+//     attrs[attr.name] = attr.value;
+//   }
+//   return attrs;
+// }
+
+// function extractDataAttributes(el) {
+//   const data = {};
+//   for (let attr of el.attributes) {
+//     if (attr.name.startsWith('data-')) {
+//       data[attr.name] = attr.value;
+//     }
+//   }
+//   return data;
+// }
+
+// function getWidgetType(tag) {
+//   if (['h1','h2','h3','h4','h5','h6'].includes(tag)) return 'heading';
+//   if (tag === 'p') return 'paragraph';
+//   if (tag === 'span') return 'text-span';
+//   if (tag === 'button') return 'button';
+//   if (tag === 'a') return 'link';
+//   if (tag === 'img') return 'image';
+//   if (tag === 'svg') return 'svg-icon';
+//   if (tag === 'video') return 'video';
+//   if (tag === 'audio') return 'audio';
+//   if (['input','textarea','select'].includes(tag)) return 'form-input';
+//   if (tag === 'label') return 'form-label';
+//   if (tag === 'form') return 'form';
+//   if (['strong','b'].includes(tag)) return 'bold-text';
+//   if (['em','i'].includes(tag)) return 'italic-text';
+//   if (['ul','ol'].includes(tag)) return 'list';
+//   if (tag === 'li') return 'list-item';
+//   if (['table','tr','td','th'].includes(tag)) return 'table-element';
+//   if (tag === 'iframe') return 'embedded-content';
+//   return 'content-widget';
+// }
+
+
+// async function getMatchedStylesFromAI(widgets, computedStyles) {
+//   const prompt = `
+// Given the following HTML widget info and a computedStyles object, extract only the relevant style properties for each widget. Match using the best available identifier: className, id, tagName, or selector (e.g. svg[role='presentation'], path.st0, h5.title#main).
+
+// Each object should return:
+// - "id"
+// - "computedStyles": all applicable styles found for this widget.
+
+// Widgets:
+// ${JSON.stringify(widgets, null, 2)}
+
+// Computed Styles:
+// ${JSON.stringify(computedStyles, null, 2)}
+
+// Return ONLY a valid JSON array of widget objects with id and computedStyles. No explanation, no markdown, no extra text.
+// `;
+
+//   const completion = await openai.chat.completions.create({
+//     model: 'gpt-3.5-turbo',
+//     messages: [{ role: 'user', content: prompt }],
+//     temperature: 0
+//   });
+
+//   let raw = completion.choices[0].message.content.trim();
+//   console.log("OpenAI raw output:", raw);
+
+//   // Remove Markdown code block markers and any leading/trailing whitespace
+//   raw = raw.replace(/^```(?:json)?/gm, '').replace(/```$/gm, '').trim();
+
+//   // Extract the first JSON array or object in the string
+//   const match = raw.match(/(\[.*\]|\{.*\})/s);
+//   if (!match) {
+//     console.error('No JSON array/object found in OpenAI output:', raw);
+//     throw new Error('Could not parse JSON from OpenAI response');
+//   }
+//   let jsonStr = match[0];
+
+//   // Remove trailing commas before closing brackets
+//   jsonStr = jsonStr.replace(/,\s*([\]}])/g, '$1');
+
+//   try {
+//     const parsed = JSON.parse(jsonStr);
+//     // If the response is an object, convert to array for uniformity
+//     const arr = Array.isArray(parsed) ? parsed : [parsed];
+//     const map = {};
+//     for (const w of arr) {
+//       if (w && w.id) map[w.id] = w.computedStyles || {};
+//     }
+//     return map;
+//   } catch (err) {
+//     console.error('JSON parse error after cleaning:', err, jsonStr);
+//     throw new Error('Could not parse JSON from OpenAI response');
+//   }
+// }
+
+// async function processHtmlSection(htmlString, computedStyles = null) {
+//   const dom = new JSDOM(htmlString);
+//   const document = dom.window.document;
+//   const templates = [];
+
+//   const widgets = document.querySelectorAll(WIDGET_TAGS.join(','));
+
+//   for (const widget of widgets) {
+//     const templateId = `template-${templateCounter++}`;
+//    const tagName = widget.tagName.toLowerCase();
+// const className = widget.getAttribute('class') || '';
+// const idAttr = widget.getAttribute('id') || '';
+
+// widget.removeAttribute('style');
+
+// const selector = `${tagName}${idAttr ? '#' + idAttr : ''}${className ? '.' + className.trim().split(/\s+/).join('.') : ''}`;
+
+
+//     const widgetData = {
+//       id: templateId,
+//       type: getWidgetType(tagName),
+//       tagName,
+//       attributes: extractAttributes(widget),
+//       innerHTML: widget.innerHTML,
+//       outerHTML: widget.outerHTML,
+//       className,
+//       dataAttributes: extractDataAttributes(widget),
+//       textContent: widget.textContent || '',
+//       isContentWidget: true,
+//       tag: tagName,
+//       idAttr,
+//       selector
+//     };
+
+//     templates.push(widgetData);
+
+//     const placeholder = document.createElement('span');
+//     placeholder.textContent = `{{${templateId}}}`;
+//     widget.parentNode.replaceChild(placeholder, widget);
+//   }
+
+//   let computedMap = {};
+//   if (computedStyles) {
+//     computedMap = await getMatchedStylesFromAI(templates, computedStyles);
+//     console.log("Computed style map:", computedMap);
+//   }
+
+//   for (let w of templates) {
+//     w.computedStyles = computedMap[w.id] || {};
+//   }
+
+//   return {
+//     processedHtml: document.documentElement.outerHTML,
+//     templates
+//   };
+// }
+
+// async function saveTemplateToFile(data) {
+//   const filePath = path.join(process.cwd(), 'templates.json');
+//   let existing = [];
+//   try {
+//     const content = await fs.readFile(filePath, 'utf8');
+//     existing = JSON.parse(content);
+//   } catch {
+//     // file may not exist yet
+//   }
+//   existing.push(data);
+//   await fs.writeFile(filePath, JSON.stringify(existing, null, 2));
+// }
+
+// export async function POST(request) {
+//   try {
+//     const { htmlInput, sectionName, computedStyles } = await request.json();
+//     if (!htmlInput) {
+//       return new Response(JSON.stringify({ error: 'Missing HTML input' }), {
+//         status: 400,
+//         headers: { 'Content-Type': 'application/json' }
+//       });
+//     }
+
+//     const result = await processHtmlSection(htmlInput, computedStyles);
+
+//     const dataToSave = {
+//       sectionName: sectionName || `section_${Date.now()}`,
+//       createdAt: new Date().toISOString(),
+//       originalHtml: htmlInput,
+//       processedHtml: result.processedHtml,
+//       templates: result.templates
+//     };
+
+//     console.log("Final data to save:", dataToSave);
+
+//     await saveTemplateToFile(dataToSave);
+
+//     return new Response(JSON.stringify({ success: true, data: dataToSave }), {
+//       status: 200,
+//       headers: { 'Content-Type': 'application/json' }
+//     });
+//   } catch (err) {
+//     console.error('Error processing HTML:', err);
+//     return new Response(JSON.stringify({
+//       error: 'Failed to convert HTML',
+//       detail: err.message
+//     }), {
+//       status: 500,
+//       headers: { 'Content-Type': 'application/json' }
+//     });
+//   }
+// }
+// "use server";
+
+// import fs from 'fs/promises';
+// import path from 'path';
+// import { JSDOM } from 'jsdom';
+// import { OpenAI } from 'openai';
+
+// const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+// let templateCounter = 1;
+
+// const WIDGET_TAGS = [
+//   'h1','h2','h3','h4','h5','h6','p','span','button','a','img','svg','video','audio',
+//   'input','textarea','select','label','strong','b','em','i','ul','ol','li','table',
+//   'tr','td','th','form','iframe'
+// ];
+
+// function extractAttributes(el) {
+//   const attrs = {};
+//   for (let attr of el.attributes) {
+//     attrs[attr.name] = attr.value;
+//   }
+//   return attrs;
+// }
+
+// function extractDataAttributes(el) {
+//   const data = {};
+//   for (let attr of el.attributes) {
+//     if (attr.name.startsWith('data-')) {
+//       data[attr.name] = attr.value;
+//     }
+//   }
+//   return data;
+// }
+
+// function getWidgetType(tag) {
+//   if (['h1','h2','h3','h4','h5','h6'].includes(tag)) return 'heading';
+//   if (tag === 'p') return 'paragraph';
+//   if (tag === 'span') return 'text-span';
+//   if (tag === 'button') return 'button';
+//   if (tag === 'a') return 'link';
+//   if (tag === 'img') return 'image';
+//   if (tag === 'svg') return 'svg-icon';
+//   if (tag === 'video') return 'video';
+//   if (tag === 'audio') return 'audio';
+//   if (['input','textarea','select'].includes(tag)) return 'form-input';
+//   if (tag === 'label') return 'form-label';
+//   if (tag === 'form') return 'form';
+//   if (['strong','b'].includes(tag)) return 'bold-text';
+//   if (['em','i'].includes(tag)) return 'italic-text';
+//   if (['ul','ol'].includes(tag)) return 'list';
+//   if (tag === 'li') return 'list-item';
+//   if (['table','tr','td','th'].includes(tag)) return 'table-element';
+//   if (tag === 'iframe') return 'embedded-content';
+//   return 'content-widget';
+// }
+
+// async function getMatchedStylesFromAI(widgets, computedStyles) {
+//   const prompt = `
+// Given the following HTML widget info and a computedStyles object, extract only the relevant style properties for each widget. Match using the best available identifier: className, id, tagName, or selector (e.g. svg[role='presentation'], path.st0, h5.title#main).
+
+// Each object should return:
+// - "id"
+// - "computedStyles": all applicable styles found for this widget.
+
+// Widgets:
+// ${JSON.stringify(widgets, null, 2)}
+
+// Computed Styles:
+// ${JSON.stringify(computedStyles, null, 2)}
+
+// Return ONLY a valid JSON array of widget objects with id and computedStyles. No explanation, no markdown, no extra text.
+// `;
+
+//   const completion = await openai.chat.completions.create({
+//     model: 'gpt-3.5-turbo',
+//     messages: [{ role: 'user', content: prompt }],
+//     temperature: 0
+//   });
+
+//   let raw = completion.choices[0].message.content.trim();
+//   console.log("OpenAI raw output:", raw);
+
+//   // Remove Markdown code block markers and any leading/trailing whitespace
+//   raw = raw.replace(/^```(?:json)?/gm, '').replace(/```$/gm, '').trim();
+
+//   // Extract the first JSON array or object in the string
+//   const match = raw.match(/(\[.*\]|\{.*\})/s);
+//   if (!match) {
+//     console.error('No JSON array/object found in OpenAI output:', raw);
+//     throw new Error('Could not parse JSON from OpenAI response');
+//   }
+//   let jsonStr = match[0];
+
+//   // Remove trailing commas before closing brackets
+//   jsonStr = jsonStr.replace(/,\s*([\]}])/g, '$1');
+
+//   try {
+//     const parsed = JSON.parse(jsonStr);
+//     const arr = Array.isArray(parsed) ? parsed : [parsed];
+//     const map = {};
+//     for (const w of arr) {
+//       if (w && w.id) map[w.id] = w.computedStyles || {};
+//     }
+//     return map;
+//   } catch (err) {
+//     console.error('JSON parse error after cleaning:', err, jsonStr);
+//     throw new Error('Could not parse JSON from OpenAI response');
+//   }
+// }
+
+// async function processHtmlSection(htmlString, computedStyles = null) {
+//   const dom = new JSDOM(htmlString);
+//   const document = dom.window.document;
+//   const templates = [];
+
+//   const widgets = document.querySelectorAll(WIDGET_TAGS.join(','));
+
+//   for (const widget of widgets) {
+//     const templateId = `template-${templateCounter++}`;
+//     const tagName = widget.tagName.toLowerCase();
+//     const className = widget.getAttribute('class') || '';
+//     const idAttr = widget.getAttribute('id') || '';
+
+//     widget.removeAttribute('style');
+
+//     const selector = `${tagName}${idAttr ? '#' + idAttr : ''}${className ? '.' + className.trim().split(/\s+/).join('.') : ''}`;
+
+//     const widgetData = {
+//       id: templateId,
+//       type: getWidgetType(tagName),
+//       tagName,
+//       attributes: extractAttributes(widget),
+//       innerHTML: widget.innerHTML,
+//       outerHTML: widget.outerHTML,
+//       className,
+//       dataAttributes: extractDataAttributes(widget),
+//       textContent: widget.textContent || '',
+//       isContentWidget: true,
+//       tag: tagName,
+//       idAttr,
+//       selector
+//     };
+
+//     templates.push(widgetData);
+
+//     const placeholder = document.createElement('span');
+//     placeholder.textContent = `{{${templateId}}}`;
+//     widget.parentNode.replaceChild(placeholder, widget);
+//   }
+
+//   let computedMap = {};
+//   if (computedStyles) {
+//     computedMap = await getMatchedStylesFromAI(templates, computedStyles);
+//   }
+
+//   for (let w of templates) {
+//     w.computedStyles = computedMap[w.id] || {};
+//   }
+
+//   return {
+//     processedHtml: document.documentElement.outerHTML,
+//     templates
+//   };
+// }
+
+// async function saveTemplateToFile(data) {
+//   const filePath = path.join(process.cwd(), 'templates.json');
+//   let existing = [];
+//   try {
+//     const content = await fs.readFile(filePath, 'utf8');
+//     existing = JSON.parse(content);
+//   } catch {
+//     // file may not exist yet
+//   }
+//   existing.push(data);
+//   await fs.writeFile(filePath, JSON.stringify(existing, null, 2));
+// }
+
+// export async function POST(request) {
+//   try {
+//     const { htmlInput, sectionName, computedStyles } = await request.json();
+//     if (!htmlInput) {
+//       return new Response(JSON.stringify({ error: 'Missing HTML input' }), {
+//         status: 400,
+//         headers: { 'Content-Type': 'application/json' }
+//       });
+//     }
+
+//     const result = await processHtmlSection(htmlInput, computedStyles);
+
+//     const dataToSave = {
+//       sectionName: sectionName || `section_${Date.now()}`,
+//       createdAt: new Date().toISOString(),
+//       originalHtml: htmlInput,
+//       processedHtml: result.processedHtml,
+//       templates: result.templates
+//     };
+
+//     await saveTemplateToFile(dataToSave);
+
+//     return new Response(JSON.stringify({ success: true, data: dataToSave }), {
+//       status: 200,
+//       headers: { 'Content-Type': 'application/json' }
+//     });
+//   } catch (err) {
+//     console.error('Error processing HTML:', err);
+//     return new Response(JSON.stringify({
+//       error: 'Failed to convert HTML',
+//       detail: err.message
+//     }), {
+//       status: 500,
+//       headers: { 'Content-Type': 'application/json' }
+//     });
+//   }
+// }
 "use server";
 
 import fs from 'fs/promises';
@@ -460,48 +898,67 @@ function getWidgetType(tag) {
 
 async function getMatchedStylesFromAI(widgets, computedStyles) {
   const prompt = `
-Given the following HTML widget info and a computedStyles object, extract only the relevant style properties for each widget. Match using the best available identifier: className, id, tagName, or selector (e.g. svg[role='presentation'], path.st0, h5.title#main).
+You are a JSON-only engine. Do not return any explanation, markdown, or comments.
 
-Each object should return:
-- "id"
-- "computedStyles": all applicable styles found for this widget.
+Task:
+Match computedStyles to each widget using the best possible selector (id > className > tagName > selector).
+
+Instructions:
+- Return a JSON **array** of objects.
+- Each object must contain "id" and full "computedStyles" — do not leave any computedStyles empty, even if the tag is repeated.
+- Do NOT include markdown syntax like \`\`\`.
 
 Widgets:
 ${JSON.stringify(widgets, null, 2)}
 
-Computed Styles:
+ComputedStyles:
 ${JSON.stringify(computedStyles, null, 2)}
 
-Return JSON array of widget objects with id and computedStyles only. Do not include any explanation.
+Response format:
+[
+  {
+    "id": "template-1",
+    "computedStyles": {
+      "color": "red",
+      ...
+    }
+  },
+  ...
+]
 `;
 
   const completion = await openai.chat.completions.create({
-    model: 'gpt-4-turbo',
+    model: 'gpt-4o-mini',
     messages: [{ role: 'user', content: prompt }],
     temperature: 0
   });
 
-  const raw = completion.choices[0].message.content.trim();
-  console.log("OpenAI raw output:", raw);
+  let raw = completion.choices[0].message.content.trim();
 
-  // Attempt to parse as full JSON
+  // Save raw response for debugging
+  await fs.writeFile(path.join(process.cwd(), 'debug_openai_raw.json'), raw);
+
+  const arrayStart = raw.indexOf('[');
+  const arrayEnd = raw.lastIndexOf(']');
+
+  if (arrayStart === -1 || arrayEnd === -1) {
+    console.error('OpenAI did not return a valid JSON array:\n', raw);
+    throw new Error('Could not parse JSON from OpenAI response');
+  }
+
+  let jsonStr = raw.slice(arrayStart, arrayEnd + 1).replace(/,\s*([\]}])/g, '$1');
+
   try {
-    const parsed = JSON.parse(raw);
+    const parsed = JSON.parse(jsonStr);
+    const arr = Array.isArray(parsed) ? parsed : [parsed];
     const map = {};
-    for (const w of parsed) {
-      map[w.id] = w.computedStyles || {};
+    for (const w of arr) {
+      if (w && w.id) map[w.id] = w.computedStyles || {};
     }
     return map;
-  } catch {
-    // Fallback if JSON is wrapped in text
-    const jsonMatch = raw.match(/\[.*\]/s);
-    if (!jsonMatch) throw new Error('Could not parse JSON from OpenAI response');
-    const extracted = JSON.parse(jsonMatch[0]);
-    const map = {};
-    for (const w of extracted) {
-      map[w.id] = w.computedStyles || {};
-    }
-    return map;
+  } catch (err) {
+    console.error('JSON parse error after cleanup:', err, '\nRaw JSON:', jsonStr);
+    throw new Error('Could not parse JSON from OpenAI response');
   }
 }
 
@@ -514,14 +971,13 @@ async function processHtmlSection(htmlString, computedStyles = null) {
 
   for (const widget of widgets) {
     const templateId = `template-${templateCounter++}`;
-   const tagName = widget.tagName.toLowerCase();
-const className = widget.getAttribute('class') || '';
-const idAttr = widget.getAttribute('id') || '';
+    const tagName = widget.tagName.toLowerCase();
+    const className = widget.getAttribute('class') || '';
+    const idAttr = widget.getAttribute('id') || '';
 
-widget.removeAttribute('style');
+    widget.removeAttribute('style');
 
-const selector = `${tagName}${idAttr ? '#' + idAttr : ''}${className ? '.' + className.trim().split(/\s+/).join('.') : ''}`;
-
+    const selector = `${tagName}${idAttr ? '#' + idAttr : ''}${className ? '.' + className.trim().split(/\s+/).join('.') : ''}`;
 
     const widgetData = {
       id: templateId,
@@ -549,7 +1005,6 @@ const selector = `${tagName}${idAttr ? '#' + idAttr : ''}${className ? '.' + cla
   let computedMap = {};
   if (computedStyles) {
     computedMap = await getMatchedStylesFromAI(templates, computedStyles);
-    console.log("Computed style map:", computedMap);
   }
 
   for (let w of templates) {
@@ -595,8 +1050,6 @@ export async function POST(request) {
       templates: result.templates
     };
 
-    console.log("Final data to save:", dataToSave);
-
     await saveTemplateToFile(dataToSave);
 
     return new Response(JSON.stringify({ success: true, data: dataToSave }), {
@@ -614,3 +1067,4 @@ export async function POST(request) {
     });
   }
 }
+
